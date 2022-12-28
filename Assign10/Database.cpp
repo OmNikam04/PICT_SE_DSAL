@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 #include<fstream>
+#include<stdio.h>
 using namespace std;
 
 class Student{
@@ -66,6 +67,33 @@ public:
         }
         in.close();
     }
+    void deleteData(){
+        in.open(filename);
+        fstream tempFile;
+        tempFile.open("temp.txt", ios::out);
+
+        cout<<"-----------Deleting data--------------"<<endl;
+        cout<<"Enter name of student: ";
+        string nm;
+        cin>>nm;
+        string s;
+        bool found =false;
+        while(getline(in, s)){
+            if(s.find(nm)== string::npos){// npos means until the end of string
+                tempFile<<s<<endl;
+            }
+        }
+        in.close();
+        tempFile.close();
+        if(remove("D:\\SY_1sem\\DSA\\External_practice\\Assign10\\data.txt") != 0){
+            cout<<"Error while removing"<<endl;
+        }
+        if(rename("D:\\SY_1sem\\DSA\\External_practice\\Assign10\\temp.txt", "D:\\SY_1sem\\DSA\\External_practice\\Assign10\\data.txt") != 0){
+            cout<<"Error while renaming"<<endl;
+        }
+        
+        
+    }
 };
 
 int main()
@@ -97,6 +125,9 @@ int main()
             break;
         case 3:
             db.search();
+            break;
+        case 4:
+            db.deleteData();
             break;
         default:
             break;
