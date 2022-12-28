@@ -1,0 +1,3 @@
+for(char val: ans){
+            
+        // }

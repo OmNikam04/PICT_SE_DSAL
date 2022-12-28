@@ -1,0 +1,4 @@
+om	23	se11	pune
+sahil	91	se11	pune
+manish	57	se10	nashik
+krushna	78	se09	bhopal
