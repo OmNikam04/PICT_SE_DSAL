@@ -1,3 +1,0 @@
-for(char val: ans){
-            
-        // }
